@@ -1,0 +1,20 @@
+{
+  "name": "chilean-stocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "node -r dotenv/config node_modules/@google-cloud/functions-framework --target=helloWorld",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "christian-rojas",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/functions-framework": "1.9.0",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.1"
+  },
+  "devDependencies": {}
+}
