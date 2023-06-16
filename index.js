@@ -3,9 +3,7 @@ const { getStockData } = require("./utils.js");
 
 exports.helloWorld = async (req, res) => {    
     const stockName = req.body.nemo
-    const stockData = await getStockData(stockName)
+    const stockData = await getStockData(stockName)    
     sendMessage(stockName, stockData);
-    // return "ok"
     res.send("ok")
-    // return "hola"
 };

@@ -4,15 +4,15 @@ exports.sendMessage = (name, data) => {
   
   const payload = {
     channel: "#stocks",
-    text: `accion ${name} precio: ${lastPrice}`,
-    // attachments: [
-    //   {
-    //     title: "My first Slack Message",
-    //     text: "Random example message text",
-    //     author_name: "alejandrogonzalez3",
-    //     color: "#00FF00",
-    //   },
-    // ],
+    // text: `accion ${name} precio: ${lastPrice}`,
+    attachments: [
+      {
+        title: "precios actualizados",
+        text: `accion ${name} precio: ${lastPrice}`,
+        author_name: "stocks-bot",
+        color: "#00FF00",
+      },
+    ],
   };
 
   fetch("https://slack.com/api/chat.postMessage", {
