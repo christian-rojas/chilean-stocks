@@ -17,7 +17,7 @@ jobs:
       - id: "auth"
         uses: "google-github-actions/auth@v1"
         with:
-          workload_identity_provider: "projects/247447409982/locations/global/workloadIdentityPools/my-pool/*"
+          workload_identity_provider: "projects/247447409982/locations/global/workloadIdentityPools/my-pool/providers/my-provider"
           service_account: "service-247447409982@gcf-admin-robot.iam.gserviceaccount.com"
 
       - id: "deploy"
