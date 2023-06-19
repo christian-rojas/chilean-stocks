@@ -19,9 +19,11 @@ const parseDate = (data) => {
 exports.getStockData = async (stockName) => {
   const response = await fetch(`https://mercados.larrainvial.com/www/buscador.html?SEARCH_VALUE=${stockName}&MERCADO=chile`)  
   const jsonResponse = await response.json()
-  
-  const stockId = jsonResponse.find(el => el.name === stockName.toUpperCase()).id
+  const stockId = jsonResponse.find(el => el.name === stockName.toUpperCase())?.id ?? null
 
+  if (!stockId) {
+    return null
+  }
   const data = await fetch(
     `https://larrainvial.finmarketslive.cl/www/datachart.html?ID_NOTATION=${stockId}&TIME_SPAN=5D&QUALITY=1&VOLUME=true`,
     { method: "GET", headers: { "Content-Type": "application/json" } }
