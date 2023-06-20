@@ -31,7 +31,7 @@ jobs:
       - id: "deploy"
         uses: google-github-actions/deploy-cloud-functions@main
         with:
-          name: "chilean-stock-api"
+          name: "chilean-stock-api-1"
           runtime: nodejs18
           entry_point: helloWorld
           region: us-central1
