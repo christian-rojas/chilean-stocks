@@ -21,11 +21,20 @@ jobs:
           workload_identity_provider: "projects/247447409982/locations/global/workloadIdentityPools/bolsa/providers/github"
           service_account: "cloud-run-pipeline@vetsly.iam.gserviceaccount.com"
 
+      # - id: "deploy"
+      #   uses: "google-github-actions/deploy-cloud-functions@v1"
+      #   with:
+      #     name: "chilean-stock-api"
+      #     runtime: "nodejs18"
+      # - name: Deploy to Cloud Functions
       - id: "deploy"
-        uses: "google-github-actions/deploy-cloud-functions@v1"
+        uses: google-github-actions/deploy-cloud-functions@main
         with:
           name: "chilean-stock-api"
-          runtime: "nodejs18"
+          runtime: nodejs149
+          entry_point: helloWorld
+          region: us-central1
+          service_account_email: cloud-run-pipeline@vetsly.iam.gserviceaccount.com
 
       # Example of using the output
       - id: "test"
