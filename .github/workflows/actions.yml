@@ -31,7 +31,7 @@ jobs:
         uses: google-github-actions/deploy-cloud-functions@main
         with:
           name: "chilean-stock-api"
-          runtime: nodejs149
+          runtime: nodejs18
           entry_point: helloWorld
           region: us-central1
           service_account_email: cloud-run-pipeline@vetsly.iam.gserviceaccount.com
