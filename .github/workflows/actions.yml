@@ -18,7 +18,7 @@ jobs:
         uses: "google-github-actions/auth@v1"
         with:
           create_credentials_file: "true"
-          workload_identity_provider: "projects/vetsly/locations/global/workloadIdentityPools/bolsa/providers/github"
+          workload_identity_provider: "projects/247447409982/locations/global/workloadIdentityPools/my-pool/providers/my-provider"
           service_account: "cloud-run-pipeline@vetsly.iam.gserviceaccount.com"
 
       # - id: "deploy"
