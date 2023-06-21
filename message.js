@@ -1,14 +1,17 @@
 exports.sendMessage = (name, data) => {
   const SLACK_BOT_TOKEN = process.env.SLACK_BOT_TOKEN ?? '';
   const lastPrice = data[data.length-1].close
+
+  const min = Math.min(...data.map(x => x.close))
+  const max = Math.max(...data.map(x => x.close))  
   
   const payload = {
     channel: "#stocks",
     // text: `accion ${name} precio: ${lastPrice}`,
     attachments: [
       {
-        title: "precios actualizados",
-        text: `accion ${name} precio: ${lastPrice}`,
+        title: "precios ultimos 5 dias",
+        text: `${name}: $${lastPrice} - min: $${min} - max: $${max}`,
         author_name: "stocks-bot",
         color: "#00FF00",
       },

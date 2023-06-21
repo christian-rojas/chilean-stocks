@@ -2,7 +2,7 @@ const { sendMessage } = require("./message.js");
 const { getStockData } = require("./utils.js");
 
 exports.helloWorld = async (req, res) => {    
-    const nemos = ['itaucl', 'chile', 'enelchile', 'sqm', 'cap']
+    const nemos = ['itaucl', 'chile', 'enelchile', 'sqm', 'cap', 'planvital', 'security']
     const data = nemos.map(async (nemo) => {
         return getStockData(nemo)
     })
