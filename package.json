@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node -r dotenv/config node_modules/@google-cloud/functions-framework --target=helloWorld",
     "dev": "node --watch -r dotenv/config node_modules/@google-cloud/functions-framework --target=helloWorld",
+    "commit": "cz",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "christian-rojas",
@@ -17,5 +18,7 @@
     "express": "^4.18.2",
     "node-fetch": "^3.3.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "commitizen": "^4.3.0"
+  }
 }
